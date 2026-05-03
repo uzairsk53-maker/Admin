@@ -1,0 +1,94 @@
+<div class="admin-shell">
+
+  <!-- Mobile overlay -->
+  <div class="sidebar-overlay" [class.is-open]="sidebarOpen" (click)="closeSidebar()"></div>
+
+  <!-- ── Sidebar ─────────────────────────────────────────── -->
+  <aside class="sidebar" [class.sidebar--open]="sidebarOpen">
+
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">
+        <app-icon name="sparkle" [size]="14"></app-icon>
+      </div>
+      <div class="sidebar__logo-text">
+        <span class="sidebar__logo-sub">Admin</span>
+        <span class="sidebar__logo-title">Shop UZAIR</span>
+      </div>
+    </div>
+
+    <nav class="sidebar__nav">
+      <p class="sidebar__nav-section">Main Menu</p>
+      <a *ngFor="let item of navItems"
+        [routerLink]="item.route"
+        routerLinkActive="sidebar__link--active"
+        class="sidebar__link"
+        (click)="closeSidebar()">
+        <span class="sidebar__link-icon">
+          <app-icon [name]="item.icon" [size]="15"></app-icon>
+        </span>
+        <span class="sidebar__link-label">{{ item.label }}</span>
+      </a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <div class="sidebar__user">
+        <div class="sidebar__user-avatar">A</div>
+        <div class="sidebar__user-info">
+          <span class="sidebar__user-name">Admin</span>
+          <span class="sidebar__user-role">Superuser</span>
+        </div>
+      </div>
+      <button type="button" class="sidebar__logout" (click)="logout()" title="Logout">
+        <app-icon name="logout" [size]="15"></app-icon>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ── Main ──────────────────────────────────────────── -->
+  <div class="admin-main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <button type="button" class="topbar__menu-btn" (click)="toggleSidebar()">
+        <app-icon name="menu" [size]="18"></app-icon>
+      </button>
+
+      <div class="topbar__breadcrumb">
+        <span class="topbar__page">{{ activeNav.label }}</span>
+      </div>
+
+      <div class="topbar__right">
+        <div class="topbar__search">
+          <app-icon name="search" [size]="13"></app-icon>
+          <input type="text" placeholder="Search…" />
+        </div>
+        <button type="button" class="topbar__icon-btn" title="Notifications">
+          <app-icon name="notification" [size]="16"></app-icon>
+        </button>
+        <div class="topbar__user-chip">
+          <div class="topbar__avatar">A</div>
+          <span class="topbar__username">Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <main class="admin-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <!-- Mobile bottom nav -->
+  <nav class="mobile-nav">
+    <a *ngFor="let item of navItems"
+      [routerLink]="item.route"
+      routerLinkActive="mobile-nav__link--active"
+      class="mobile-nav__link"
+      (click)="closeSidebar()">
+      <app-icon [name]="item.icon" [size]="18"></app-icon>
+      <span>{{ item.label }}</span>
+    </a>
+  </nav>
+
+  <app-loader></app-loader>
+</div>

@@ -1,0 +1,178 @@
+<div class="page-shell page-stack">
+
+  <!-- KPI Cards -->
+  <div class="kpi-grid">
+    <div *ngFor="let card of metricCards; trackBy: trackByLabel" class="kpi-card">
+      <div class="kpi-card__icon" [ngClass]="card.iconClass">
+        <app-icon [name]="card.icon" [size]="18"></app-icon>
+      </div>
+      <div class="kpi-card__body">
+        <span class="kpi-card__label">{{ card.label }}</span>
+        <ng-container *ngIf="!loading">
+          <span class="kpi-card__value">{{ card.value }}</span>
+          <span *ngIf="card.sub" class="kpi-card__sub">{{ card.sub }}</span>
+        </ng-container>
+        <div *ngIf="loading" class="skeleton-line" style="width:80px;height:22px;margin-top:4px"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts row -->
+  <div class="dash-row">
+
+    <!-- Revenue Chart -->
+    <div class="card dash-chart-card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">Revenue Overview</h3>
+          <p class="card-sub">{{ graphPeriod | titlecase }} orders revenue</p>
+        </div>
+        <select class="form-select" style="width:130px;height:32px;font-size:12px;padding:0 28px 0 8px"
+          [(ngModel)]="graphPeriod" (change)="loadRevenueGraph()">
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+        </select>
+      </div>
+      <div class="card-body">
+        <div *ngIf="graphLoading" class="skeleton-block" style="height:200px"></div>
+        <div *ngIf="!graphLoading && !hasGraphData" class="empty-chart">
+          <span>📊</span>
+          <p>No revenue data yet</p>
+        </div>
+        <div *ngIf="!graphLoading && hasGraphData" style="height:200px;position:relative">
+          <canvas #revenueChart></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delivery Stats -->
+    <div class="card dash-stat-card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">Delivery Performance</h3>
+          <p class="card-sub">Order fulfilment breakdown</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div *ngIf="loading" class="dash-skeletons">
+          <div class="skeleton-block" style="height:40px" *ngFor="let i of [1,2,3]"></div>
+        </div>
+        <div *ngIf="!loading" class="delivery-stats">
+          <div *ngFor="let stat of deliveryStats" class="delivery-stat">
+            <div class="delivery-stat__row">
+              <span class="delivery-stat__label">{{ stat.label }}</span>
+              <span class="delivery-stat__value">{{ stat.value }}</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar__fill" [ngClass]="stat.color" [style.width.%]="stat.percent"></div>
+            </div>
+          </div>
+          <div class="delivery-total">
+            Total: <strong>{{ metrics?.totalOrders || 0 }}</strong> orders
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom row: Recent Orders + High Risk -->
+  <div class="dash-row">
+
+    <!-- Recent Orders -->
+    <div class="card dash-orders-card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">Recent Orders</h3>
+          <p class="card-sub">Latest {{ recentOrders.length }} orders</p>
+        </div>
+        <a routerLink="/orders" class="btn btn-ghost btn-sm">View All →</a>
+      </div>
+
+      <div *ngIf="loading" class="dash-skeletons" style="padding:14px">
+        <div class="skeleton-block" style="height:36px" *ngFor="let i of [1,2,3,4,5]"></div>
+      </div>
+
+      <div *ngIf="!loading && recentOrders.length === 0" class="empty-state" style="margin:14px;padding:30px">
+        No recent orders
+      </div>
+
+      <!-- Desktop table -->
+      <div *ngIf="!loading && recentOrders.length > 0" class="desktop-table-wrap table-wrap">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>Shop</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Payment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of recentOrders; trackBy: trackById">
+              <td class="cell-bold">{{ order.shopkeeper?.shopName || 'Unknown' }}</td>
+              <td class="cell-muted">{{ order.createdAt | date:'MMM d, h:mm a' }}</td>
+              <td class="cell-bold">₹{{ order.totalAmount | number }}</td>
+              <td><span class="badge" [ngClass]="getStatusClass(order.status)">{{ order.status }}</span></td>
+              <td><span class="badge badge--gray">{{ order.paymentType }}</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile cards -->
+      <div *ngIf="!loading && recentOrders.length > 0" class="mobile-card-list">
+        <div *ngFor="let order of recentOrders; trackBy: trackById" class="data-card">
+          <div class="data-card__header">
+            <div>
+              <p class="data-card__title">{{ order.shopkeeper?.shopName || 'Unknown' }}</p>
+              <p class="data-card__subtitle">{{ order.createdAt | date:'medium' }}</p>
+            </div>
+            <span class="badge" [ngClass]="getStatusClass(order.status)">{{ order.status }}</span>
+          </div>
+          <div class="data-card__grid">
+            <div class="data-point">
+              <span class="data-point__label">Amount</span>
+              <span class="data-point__value">₹{{ order.totalAmount | number }}</span>
+            </div>
+            <div class="data-point">
+              <span class="data-point__label">Payment</span>
+              <span class="data-point__value">{{ order.paymentType }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- High Risk Shopkeepers -->
+    <div class="card dash-risk-card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">Credit Risk</h3>
+          <p class="card-sub">Partners with low credit score</p>
+        </div>
+        <span class="badge badge--red">Watch List</span>
+      </div>
+      <div class="card-body">
+        <ng-container *ngIf="loading">
+          <div *ngFor="let i of [1,2,3]" class="skeleton-block" style="height:52px;margin-bottom:8px"></div>
+        </ng-container>
+
+        <div *ngIf="!loading && highRiskShopkeepers.length === 0" class="risk-empty">
+          <span style="font-size:24px">✅</span>
+          <p>All partners in good standing</p>
+        </div>
+
+        <div *ngFor="let shop of highRiskShopkeepers; trackBy: trackById" class="risk-row">
+          <div class="risk-row__info">
+            <p class="risk-row__name">{{ shop.shopName || 'Unknown' }}</p>
+            <p class="risk-row__city">{{ shop.city || '—' }}</p>
+          </div>
+          <span class="badge badge--red">Score: {{ shop.creditScore || 0 }}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

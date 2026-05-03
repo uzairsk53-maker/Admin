@@ -1,0 +1,211 @@
+.login-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f1f5f9;
+}
+
+.login-panel--left {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 420px;
+  flex-shrink: 0;
+  background: #0f172a;
+  padding: 2rem;
+}
+
+@media (min-width: 900px) {
+  .login-panel--left { display: flex; }
+}
+
+.login-panel--right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.login-brand__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0ea5e9, #0f766e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.login-brand__sub {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin: 0;
+}
+
+.login-brand__title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+
+.login-hero { padding: 1rem 0; }
+
+.login-hero__heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.login-hero__sub {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin: 0.6rem 0 0;
+}
+
+.login-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.login-feat {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.login-feat__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.login-feat__dot--blue  { background: #38bdf8; }
+.login-feat__dot--green { background: #34d399; }
+.login-feat__dot--amber { background: #fbbf24; }
+
+.login-form-wrap {
+  width: 100%;
+  max-width: 360px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.login-form-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-form-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.login-form-title { font-size: 1.1rem; font-weight: 800; color: #0f172a; margin: 0; }
+.login-form-sub   { font-size: 0.75rem; color: #94a3b8; margin: 0.1rem 0 0; }
+
+.login-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.login-form { display: flex; flex-direction: column; gap: 14px; }
+
+.field { display: flex; flex-direction: column; gap: 5px; }
+
+.field__label {
+  font-size: 12px; font-weight: 600; color: #444;
+}
+
+.field__control {
+  height: 36px; padding: 0 10px;
+  border: 1px solid #c2c2c2; border-radius: 6px;
+  font-size: 13px; color: #212121; background: #fff;
+  outline: none; width: 100%;
+  transition: border-color 0.16s, box-shadow 0.16s;
+}
+
+.field__control:focus {
+  border-color: #2874f0;
+  box-shadow: 0 0 0 3px rgba(40,116,240,0.12);
+}
+
+.login-field-err {
+  font-size: 0.72rem;
+  color: #dc2626;
+  margin: 0.2rem 0 0;
+}
+
+.login-submit {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-submit:hover:not(:disabled) { background: #1e293b; }
+.login-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.login-spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.login-footer {
+  margin: 1.25rem 0 0;
+  font-size: 0.68rem;
+  color: #94a3b8;
+  text-align: center;
+}

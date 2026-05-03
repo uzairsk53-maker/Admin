@@ -1,0 +1,2427 @@
+npx : - Generating browser 
+application bundles 
+(phase: setup)...
+At line:1 char:1
++ npx ng build 2>&1 | 
+Out-File -Encoding ASCII 
+debug.txt
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (- G  
+  enerating br...hase: s   
+ etup)...:String) [], R    
+emoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+??? Browser application 
+bundle generation complete.
+??? Browser application 
+bundle generation complete.
+
+./src/app/app.module.ts:4:0
+-79 - Error: Module not 
+found: Error: Can't 
+resolve '@angular/platform-
+browser-animations' in 
+'E:\SHOP 
+UZAIR\admin\src\app'
+
+./src/app/app.module.ts:39:
+122-136 - Error: export 
+'NgChartsModule' (imported 
+as 'NgChartsModule') was 
+not found in 'ng2-charts' 
+(possible exports: 
+BaseChartDirective, 
+NG_CHARTS_CONFIGURATION, 
+ThemeService, 
+provideCharts, 
+withDefaultRegisterables)
+
+./src/app/core/services/aut
+h.service.ts:46:26-36 - 
+Error: export 'default' 
+(imported as 'jwt_decode') 
+was not found in 
+'jwt-decode' (possible 
+exports: 
+InvalidTokenError, 
+jwtDecode)
+
+Error: node_modules/ng2-cha
+rts/types/ng2-charts.d.ts:7
+5:116 - error TS2344: Type 
+'{ type: { alias: "type"; 
+required: false; }; 
+legend: { alias: "legend"; 
+required: false; }; data: 
+{ alias: "data"; required: 
+false; }; options: { 
+alias: "options"; 
+required: false; }; 
+plugins: { alias: 
+"plugins"; required: 
+false; }; labels: { ...; 
+}; datasets: { ...; }; }' 
+does not satisfy the 
+constraint '{ [key: 
+string]: string; }'.
+  Property '"type"' is 
+incompatible with index 
+signature.
+    Type '{ alias: "type"; 
+required: false; }' is not 
+assignable to type 
+'string'.
+
+75     static ??dir: i0.???
+?DirectiveDeclaration<BaseC
+hartDirective<any, any, 
+any>, "canvas[baseChart]", 
+["base-chart"], { "type": 
+{ "alias": "type"; 
+"required": false; }; 
+"legend": { "alias": 
+"legend"; "required": 
+false; }; "data": { 
+"alias": "data"; 
+"required": false; }; 
+"options": { "alias": 
+"options"; "required": 
+false; }; "plugins": { 
+"alias": "plugins"; 
+"required": false; }; 
+"labels": { "alias": 
+"labels"; "required": 
+false; }; "datasets": { 
+"alias": "datasets"; 
+"required": false; }; }, { 
+"chartClick": 
+"chartClick"; 
+"chartHover": 
+"chartHover"; }, never, 
+never, true, never>;
+                           
+                           
+                           
+                           
+          ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+
+
+Error: src/app/app.componen
+t.ts:5:14 - error NG8001: 
+'router-outlet' is not a 
+known element:
+1. If 'router-outlet' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'router-outlet' is a 
+Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+5   template: `<router-outl
+et></router-outlet>`
+               
+~~~~~~~~~~~~~~~
+
+
+Error: 
+src/app/app.module.ts:3:41 
+- error TS2307: Cannot 
+find module '@angular/platf
+orm-browser-animations' or 
+its corresponding type 
+declarations.
+
+3 import { 
+BrowserAnimationsModule } 
+from '@angular/platform-bro
+wser-animations';
+                           
+               ~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: 
+src/app/app.module.ts:8:10 
+- error TS2305: Module 
+'"ng2-charts"' has no 
+exported member 
+'NgChartsModule'.
+
+8 import { NgChartsModule 
+} from 'ng2-charts';
+           ~~~~~~~~~~~~~~
+
+
+Error: src/app/app.module.t
+s:53:12 - error NG1010: 
+Value
+
+Error: src/app/auth/login/l
+ogin.component.ts:4:29 - 
+error TS2307: Cannot find 
+module '../core/services/au
+th.service' or its 
+corresponding type 
+declarations.
+
+4 import { AuthService } 
+from '../core/services/auth
+.service';
+                           
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~
+
+
+Error: src/app/auth/login/l
+ogin.component.ts:61:13 - 
+error NG2003: No suitable 
+injection token for 
+parameter 'authService' of 
+class 'LoginComponent'.
+  Consider using the 
+@Inject decorator to 
+specify an injection token.
+
+61     private 
+authService: AuthService,
+               ~~~~~~~~~~~
+
+  src/app/auth/login/login.
+component.ts:61:26
+    61     private 
+authService: AuthService,
+                           
+     ~~~~~~~~~~~
+    This type does not 
+have a value, so it cannot 
+be used as injection token.
+
+
+Error: src/app/auth/login/l
+ogin.component.ts:83:15 - 
+error TS7006: Parameter 
+'err' implicitly has an 
+'any' type.
+
+83       error: (err) => {
+                 ~~~
+
+
+Error: src/app/core/service
+s/auth.service.ts:5:8 - 
+error TS1192: Module 
+'"E:/SHOP UZAIR/admin/node_
+modules/jwt-decode/build/cj
+s/index"' has no default 
+export.
+
+5 import jwt_decode from 
+'jwt-decode';
+         ~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:13:9 
+- error NG8001: 'mat-card' 
+is not a known element:
+1. If 'mat-card' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+13         <mat-card 
+class="!rounded-xl 
+shadow-lg border-l-4 
+border-indigo-500 
+hover:shadow-xl 
+transition-shadow">
+           ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:14:11 
+- error NG8001: 
+'mat-card-content' is not 
+a known element:
+1. If 'mat-card-content' 
+is an Angular component, 
+then verify that it is 
+part of this module.
+2. If 'mat-card-content' 
+is a Web Component then 
+add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+14           
+<mat-card-content 
+class="p-6">
+             ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:22:17 
+- error NG8001: 'mat-icon' 
+is not a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+22                 <mat-ico
+n>shopping_bag</mat-icon>
+                   
+~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:28:9 
+- error NG8001: 'mat-card' 
+is not a known element:
+1. If 'mat-card' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+28         <mat-card 
+class="!rounded-xl 
+shadow-lg border-l-4 
+border-green-500 
+hover:shadow-xl 
+transition-shadow">
+           ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:29:11 
+- error NG8001: 
+'mat-card-content' is not 
+a known element:
+1. If 'mat-card-content' 
+is an Angular component, 
+then verify that it is 
+part of this module.
+2. If 'mat-card-content' 
+is a Web Component then 
+add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+29           
+<mat-card-content 
+class="p-6">
+             ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:33:110
+ - error NG8004: No pipe 
+found with name 'number'.
+
+33                 <p 
+class="text-3xl font-bold 
+text-gray-800" *ngIf="!load
+ing">???{{metrics?.totalRev
+enue || 0 | 
+number:'1.0-0'}}</p>
+                           
+                           
+                           
+                           
+    ~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:37:17 
+- error NG8001: 'mat-icon' 
+is not a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+37                 <mat-ico
+n>currency_rupee</mat-icon>
+                   
+~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:43:9 
+- error NG8001: 'mat-card' 
+is not a known element:
+1. If 'mat-card' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+43         <mat-card 
+class="!rounded-xl 
+shadow-lg border-l-4 
+border-amber-500 
+hover:shadow-xl 
+transition-shadow">
+           ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:44:11 
+- error NG8001: 
+'mat-card-content' is not 
+a known element:
+1. If 'mat-card-content' 
+is an Angular component, 
+then verify that it is 
+part of this module.
+2. If 'mat-card-content' 
+is a Web Component then 
+add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+44           
+<mat-card-content 
+class="p-6">
+             ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:48:114
+ - error NG8004: No pipe 
+found with name 'number'.
+
+48                 <p 
+class="text-3xl font-bold 
+text-gray-800" *ngIf="!load
+ing">???{{metrics?.creditUs
+ageStats || 0 | 
+number:'1.0-0'}}</p>
+                           
+                           
+                           
+                           
+        ~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:52:17 
+- error NG8001: 'mat-icon' 
+is not a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+52                 <mat-ico
+n>account_balance_wallet</m
+at-icon>
+                   
+~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:58:9 
+- error NG8001: 'mat-card' 
+is not a known element:
+1. If 'mat-card' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+58         <mat-card 
+class="!rounded-xl 
+shadow-lg border-l-4 
+border-purple-500 
+hover:shadow-xl 
+transition-shadow">
+           ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:59:11 
+- error NG8001: 
+'mat-card-content' is not 
+a known element:
+1. If 'mat-card-content' 
+is an Angular component, 
+then verify that it is 
+part of this module.
+2. If 'mat-card-content' 
+is a Web Component then 
+add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+59           
+<mat-card-content 
+class="p-6">
+             ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:67:17 
+- error NG8001: 'mat-icon' 
+is not a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+67                 
+<mat-icon>store</mat-icon>
+                   
+~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:77:9 
+- error NG8001: 'mat-card' 
+is not a known element:
+1. If 'mat-card' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+77         <mat-card 
+class="!rounded-xl 
+shadow-lg overflow-hidden">
+           ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:78:11 
+- error NG8001: 
+'mat-card-header' is not a 
+known element:
+1. If 'mat-card-header' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card-header' is 
+a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+78           
+<mat-card-header 
+class="bg-gray-50 p-4 
+border-b">
+             ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:79:14 
+- error NG8001: 
+'mat-card-title' is not a 
+known element:
+1. If 'mat-card-title' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card-title' is 
+a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+79              
+<mat-card-title 
+class="text-lg">Revenue 
+Overview</mat-card-title>
+                ~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:81:11 
+- error NG8001: 
+'mat-card-content' is not 
+a known element:
+1. If 'mat-card-content' 
+is an Angular component, 
+then verify that it is 
+part of this module.
+2. If 'mat-card-content' 
+is a Web Component then 
+add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+81           
+<mat-card-content 
+class="p-4" style="height: 
+300px;">
+             ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:83:15 
+- error NG8002: Can't bind 
+to 'data' since it isn't a 
+known property of 'canvas'.
+
+83               
+[data]="barChartData"
+                 
+~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:84:15 
+- error NG8002: Can't bind 
+to 'options' since it 
+isn't a known property of 
+'canvas'.
+
+84               
+[options]="barChartOptions"
+                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:85:15 
+- error NG8002: Can't bind 
+to 'type' since it isn't a 
+known property of 'canvas'.
+
+85               
+[type]="barChartType">
+                 
+~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:92:9 
+- error NG8001: 'mat-card' 
+is not a known element:
+1. If 'mat-card' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+92         <mat-card 
+class="!rounded-xl 
+shadow-lg overflow-hidden">
+           ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:93:11 
+- error NG8001: 
+'mat-card-header' is not a 
+known element:
+1. If 'mat-card-header' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card-header' is 
+a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+93           
+<mat-card-header 
+class="bg-gray-50 p-4 
+border-b flex 
+justify-between 
+items-center">
+             ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:94:14 
+- error NG8001: 
+'mat-card-title' is not a 
+known element:
+1. If 'mat-card-title' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card-title' is 
+a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+94              
+<mat-card-title 
+class="text-lg">Top 
+Shopkeepers (Credit 
+Score)</mat-card-title>
+                ~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/dashboard/da
+shboard.component.ts:97:30 
+- error NG8002: Can't bind 
+to 'dataSource' since it 
+isn't a known property of 
+'table'.
+
+97             <table 
+mat-table [dataSource]="met
+rics?.topShopkeepers || 
+[]" class="w-full">
+                           
+     ~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:13:
+10 - error NG8001: 
+'mat-card' is not a known 
+element:
+1. If 'mat-card' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+13          <mat-card 
+class="shadow-lg 
+rounded-xl">
+            ~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:14:
+12 - error NG8001: 
+'mat-card-header' is not a 
+known element:
+1. If 'mat-card-header' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card-header' is 
+a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+14            
+<mat-card-header 
+class="bg-indigo-50 p-4 
+border-b text-indigo-800 
+font-bold">Manual 
+Repayment 
+Approval</mat-card-header>
+              ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:15:
+12 - error NG8001: 
+'mat-card-content' is not 
+a known element:
+1. If 'mat-card-content' 
+is an Angular component, 
+then verify that it is 
+part of this module.
+2. If 'mat-card-content' 
+is a Web Component then 
+add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+15            
+<mat-card-content 
+class="p-6">
+              ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:17:
+16 - error NG8001: 
+'mat-form-field' is not a 
+known element:
+1. If 'mat-form-field' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-form-field' is 
+a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+17                
+<mat-form-field 
+appearance="outline" 
+class="w-full mb-4">
+                  ~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:18:
+18 - error NG8001: 
+'mat-label' is not a known 
+element:
+1. If 'mat-label' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-label' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+18                  
+<mat-label>Shopkeeper 
+Object ID</mat-label>
+                    
+~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:19:
+34 - error NG8002: Can't 
+bind to 'ngModel' since it 
+isn't a known property of 
+'input'.
+
+19                  <input 
+matInput [(ngModel)]="repay
+Data.shopkeeperId" 
+name="shopkeeperId" 
+required>
+                           
+         ~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:19:
+47 - error TS2322: Type 
+'Event' is not assignable 
+to type 'string'.
+
+19                  <input 
+matInput [(ngModel)]="repay
+Data.shopkeeperId" 
+name="shopkeeperId" 
+required>
+                           
+                      ~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:22:
+16 - error NG8001: 
+'mat-form-field' is not a 
+known element:
+1. If 'mat-form-field' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-form-field' is 
+a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+22                
+<mat-form-field 
+appearance="outline" 
+class="w-full mb-4">
+                  ~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:23:
+18 - error NG8001: 
+'mat-label' is not a known 
+element:
+1. If 'mat-label' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-label' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+23                  
+<mat-label>Amount Paid 
+(???)</mat-label>
+                    
+~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:24:
+48 - error NG8002: Can't 
+bind to 'ngModel' since it 
+isn't a known property of 
+'input'.
+
+24                  <input 
+matInput type="number" [(ng
+Model)]="repayData.amount" 
+name="amount" required>
+                           
+                       ~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:24:
+61 - error TS2322: Type 
+'Event' is not assignable 
+to type 'number'.
+
+24                  <input 
+matInput type="number" [(ng
+Model)]="repayData.amount" 
+name="amount" required>
+                           
+                           
+         
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:28:
+53 - error NG8002: Can't 
+bind to 'ngModel' since it 
+isn't a known property of 
+'input'.
+
+28                  <input 
+type="checkbox" 
+id="isLate" [(ngModel)]="re
+payData.isLate" 
+name="isLate" class="w-4 
+h-4 text-indigo-600 
+border-gray-300 rounded 
+focus:ring-indigo-500">
+                           
+                           
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:28:
+66 - error TS2322: Type 
+'Event' is not assignable 
+to type 'boolean'.
+
+28                  <input 
+type="checkbox" 
+id="isLate" [(ngModel)]="re
+payData.isLate" 
+name="isLate" class="w-4 
+h-4 text-indigo-600 
+border-gray-300 rounded 
+focus:ring-indigo-500">
+                           
+                           
+              
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:40:
+10 - error NG8001: 
+'mat-card' is not a known 
+element:
+1. If 'mat-card' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+40          <mat-card 
+class="shadow-lg 
+rounded-xl">
+            ~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:41:
+12 - error NG8001: 
+'mat-card-header' is not a 
+known element:
+1. If 'mat-card-header' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card-header' is 
+a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+41            
+<mat-card-header 
+class="bg-gray-50 p-4 
+border-b font-bold">System 
+Credit 
+Rules</mat-card-header>
+              ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:42:
+12 - error NG8001: 
+'mat-card-content' is not 
+a known element:
+1. If 'mat-card-content' 
+is an Angular component, 
+then verify that it is 
+part of this module.
+2. If 'mat-card-content' 
+is a Web Component then 
+add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+42            
+<mat-card-content 
+class="p-6 space-y-4">
+              ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:44:
+17 - error NG8001: 
+'mat-icon' is not a known 
+element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+44                 
+<mat-icon class="mr-2">chec
+k_circle</mat-icon> 
+<span><strong>On-Time 
+Repayment (7 
+Days):</strong> +5% points 
+bonus, +10 Credit 
+Score.</span>
+                   
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/cre
+dit/credit.component.ts:47:
+17 - error NG8001: 
+'mat-icon' is not a known 
+element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+47                 
+<mat-icon class="mr-2">warn
+ing</mat-icon> 
+<span><strong>Late 
+Repayment:</strong> -2% 
+points penalty, -50 Credit 
+Score.</span>
+                   
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/del
+ivery/delivery.component.ts
+:12:12 - error NG8001: 
+'mat-icon' is not a known 
+element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+12            
+<mat-icon>add</mat-icon> 
+Add
+              ~~~~~~~~~~
+
+
+Error: src/app/features/del
+ivery/delivery.component.ts
+:17:11 - error NG8001: 
+'mat-card' is not a known 
+element:
+1. If 'mat-card' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+17           <mat-card 
+*ngFor="let boy of boys" 
+class="shadow rounded-xl 
+border border-gray-100 
+mb-4 hover:shadow-lg 
+transition-shadow">
+             ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~
+
+
+Error: src/app/features/del
+ivery/delivery.component.ts
+:18:13 - error NG8001: 
+'mat-card-content' is not 
+a known element:
+1. If 'mat-card-content' 
+is an Angular component, 
+then verify that it is 
+part of this module.
+2. If 'mat-card-content' 
+is a Web Component then 
+add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+18             
+<mat-card-content 
+class="p-6">
+               ~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/del
+ivery/delivery.component.ts
+:29:17 - error NG8001: 
+'mat-icon' is not a known 
+element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+29                 
+<mat-icon 
+class="align-middle 
+text-sm">phone</mat-icon> 
+{{boy.phone}}
+                   ~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+
+
+Error: src/app/features/del
+ivery/delivery.component.ts
+:35:13 - error NG8001: 
+'mat-icon' is not a known 
+element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+35             <mat-icon 
+class="animate-spin text-in
+digo-500">autorenew</mat-ic
+on>
+               ~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+
+
+Error: src/app/features/ord
+ers/orders.component.ts:11:
+7 - error NG8001: 
+'mat-tab-group' is not a 
+known element:
+1. If 'mat-tab-group' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-tab-group' is a 
+Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+11       <mat-tab-group (se
+lectedTabChange)="onTabChan
+ge($event)" class="mt-4 
+bg-white shadow rounded-lg 
+w-full">
+         ~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+
+
+Error: src/app/features/ord
+ers/orders.component.ts:12:
+9 - error NG8001: 
+'mat-tab' is not a known 
+element:
+1. If 'mat-tab' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-tab' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+12         <mat-tab 
+label="ALL"></mat-tab>
+           
+~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/ord
+ers/orders.component.ts:13:
+9 - error NG8001: 
+'mat-tab' is not a known 
+element:
+1. If 'mat-tab' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-tab' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+13         <mat-tab 
+label="PENDING"></mat-tab>
+           
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/ord
+ers/orders.component.ts:14:
+9 - error NG8001: 
+'mat-tab' is not a known 
+element:
+1. If 'mat-tab' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-tab' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+14         <mat-tab 
+label="APPROVED"></mat-tab>
+           
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/ord
+ers/orders.component.ts:15:
+9 - error NG8001: 
+'mat-tab' is not a known 
+element:
+1. If 'mat-tab' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-tab' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+15         <mat-tab label="
+DELIVERED"></mat-tab>
+           
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/ord
+ers/orders.component.ts:18:
+28 - error NG8002: Can't 
+bind to 'dataSource' since 
+it isn't a known property 
+of 'table'.
+
+18           <table 
+mat-table 
+[dataSource]="orders" 
+class="w-full">
+                           
+   ~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/ord
+ers/orders.component.ts:23:
+73 - error NG8004: No pipe 
+found with name 'date'.
+
+23                  <div 
+class="text-sm font-medium"
+>{{element.createdAt | 
+date:'short'}}</div>
+                           
+                           
+                     ~~~~
+
+
+Error: src/app/features/ord
+ers/orders.component.ts:46:
+24 - error NG8002: Can't 
+bind to 'ngClass' since it 
+isn't a known property of 
+'span'.
+
+ 46                        
+[ngClass]="{
+                           
+~~~~~~~~~~~~
+ 47                        
+   'bg-yellow-100 
+text-yellow-800': 
+element.status === 
+'PENDING',
+    ~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+... 
+ 49                        
+   'bg-green-100 
+text-green-800': 
+element.status === 
+'DELIVERED'
+    ~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+ 50                        
+}">
+    
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/ord
+ers/orders.component.ts:69:
+13 - error NG8001: 
+'mat-icon' is not a known 
+element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+69             <mat-icon 
+class="animate-spin text-in
+digo-600">autorenew</mat-ic
+on>
+               ~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:17:13 - error NG8001: 
+'mat-icon' is not a known 
+element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+17             
+<mat-icon>add</mat-icon> 
+Add Product
+               ~~~~~~~~~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:25:11 - error NG8001: 
+'mat-form-field' is not a 
+known element:
+1. If 'mat-form-field' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-form-field' is 
+a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+25           
+<mat-form-field 
+appearance="outline" 
+class="w-1/3">
+             ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:26:13 - error NG8001: 
+'mat-label' is not a known 
+element:
+1. If 'mat-label' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-label' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+26             <mat-label>S
+earch</mat-label>
+               ~~~~~~~~~~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:28:13 - error NG8001: 
+'mat-icon' is not a known 
+element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+28             <mat-icon 
+matSuffix>search</mat-icon>
+               
+~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:33:26 - error NG8002: 
+Can't bind to 'dataSource' 
+since it isn't a known 
+property of 'table'.
+
+33         <table 
+mat-table 
+[dataSource]="products" 
+class="w-full">
+                           
+ ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:57:71 - error NG8002: 
+Can't bind to 'ngClass' 
+since it isn't a known 
+property of 'span'.
+
+57                <span 
+class="px-2 py-1 
+rounded-full text-xs 
+font-bold" 
+[ngClass]="element.stock > 
+10 ? 'bg-green-100 
+text-green-800' : 
+'bg-red-100 text-red-800'">
+                           
+                           
+                   ~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:66:85 - error NG8001: 
+'mat-icon' is not a known 
+element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+66               <button 
+mat-icon-button 
+color="primary" (click)="op
+enDialog(element)"><mat-ico
+n>edit</mat-icon></button>
+                           
+                           
+                           
+      ~~~~~~~~~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:67:89 - error NG8001: 
+'mat-icon' is not a known 
+element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+67               <button 
+mat-icon-button 
+color="warn" (click)="delet
+eProduct(element._id)"><mat
+-icon>delete</mat-icon></bu
+tton>
+                           
+                           
+                           
+          ~~~~~~~~~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:76:78 - error NG8001: 
+'mat-icon' is not a known 
+element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+76               <span 
+*ngIf="loading" 
+class="flex justify-center 
+items-center"><mat-icon 
+class="animate-spin 
+mr-2">autorenew</mat-icon> 
+Loading...</span>
+                           
+                           
+                          ~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:82:9 - error NG8001: 
+'mat-paginator' is not a 
+known element:
+1. If 'mat-paginator' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-paginator' is a 
+Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+82         <mat-paginator 
+[length]="totalItems"
+           ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+83                        
+[pageSize]="limit"
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+84                        
+[pageSizeOptions]="[10, 
+25, 50]"
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+85                        (
+page)="onPageChange($event)
+">
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:82:24 - error NG8002: 
+Can't bind to 'length' 
+since it isn't a known 
+property of 
+'mat-paginator'.
+1. If 'mat-paginator' is 
+an Angular component and 
+it has 'length' input, 
+then verify that it is 
+part of this module.
+2. If 'mat-paginator' is a 
+Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+3. To allow any property 
+add 'NO_ERRORS_SCHEMA' to 
+the '@NgModule.schemas' of 
+this component.
+
+82         <mat-paginator 
+[length]="totalItems"
+                          
+~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:83:24 - error NG8002: 
+Can't bind to 'pageSize' 
+since it isn't a known 
+property of 
+'mat-paginator'.
+1. If 'mat-paginator' is 
+an Angular component and 
+it has 'pageSize' input, 
+then verify that it is 
+part of this module.
+2. If 'mat-paginator' is a 
+Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+3. To allow any property 
+add 'NO_ERRORS_SCHEMA' to 
+the '@NgModule.schemas' of 
+this component.
+
+83                        
+[pageSize]="limit"
+                          
+~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:84:24 - error NG8002: 
+Can't bind to 
+'pageSizeOptions' since it 
+isn't a known property of 
+'mat-paginator'.
+1. If 'mat-paginator' is 
+an Angular component and 
+it has 'pageSizeOptions' 
+input, then verify that it 
+is part of this module.
+2. If 'mat-paginator' is a 
+Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+3. To allow any property 
+add 'NO_ERRORS_SCHEMA' to 
+the '@NgModule.schemas' of 
+this component.
+
+84                        
+[pageSizeOptions]="[10, 
+25, 50]"
+                          ~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+
+
+Error: src/app/features/pro
+ducts/products.component.ts
+:85:45 - error TS2345: 
+Argument of type 'Event' 
+is not assignable to 
+parameter of type 
+'PageEvent'.
+  Type 'Event' is missing 
+the following properties 
+from type 'PageEvent': 
+pageIndex, pageSize, length
+
+85                        (
+page)="onPageChange($event)
+">
+                           
+                    ~~~~~~
+
+
+Error: src/app/features/sho
+pkeepers/shopkeeper.compone
+nt.ts:11:8 - error NG8001: 
+'mat-card' is not a known 
+element:
+1. If 'mat-card' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-card' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+11        <mat-card 
+class="mt-6 shadow-xl 
+rounded-lg 
+overflow-hidden">
+          ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/sho
+pkeepers/shopkeeper.compone
+nt.ts:13:14 - error 
+NG8001: 'mat-form-field' 
+is not a known element:
+1. If 'mat-form-field' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-form-field' is 
+a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+13              
+<mat-form-field 
+appearance="outline" 
+class="w-1/3 mb-0">
+                ~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/sho
+pkeepers/shopkeeper.compone
+nt.ts:14:16 - error 
+NG8001: 'mat-label' is not 
+a known element:
+1. If 'mat-label' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-label' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+14                
+<mat-label>Search Shop 
+Name</mat-label>
+                  
+~~~~~~~~~~~
+
+
+Error: src/app/features/sho
+pkeepers/shopkeeper.compone
+nt.ts:16:16 - error 
+NG8001: 'mat-icon' is not 
+a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+16                
+<mat-icon 
+matSuffix>search</mat-icon>
+                  
+~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/sho
+pkeepers/shopkeeper.compone
+nt.ts:20:28 - error 
+NG8002: Can't bind to 
+'dataSource' since it 
+isn't a known property of 
+'table'.
+
+20           <table 
+mat-table 
+[dataSource]="shopkeepers" 
+class="w-full">
+                           
+   
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/sho
+pkeepers/shopkeeper.compone
+nt.ts:32:39 - error 
+NG8001: 'mat-icon' is not 
+a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+32                  <div 
+class="text-sm"><mat-icon 
+class="text-xs align-middle
+">phone</mat-icon> 
+{{element.phone}}</div>
+                           
+              ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/features/sho
+pkeepers/shopkeeper.compone
+nt.ts:40:57 - error 
+NG8002: Can't bind to 
+'ngClass' since it isn't a 
+known property of 'div'.
+
+40                  <div 
+class="text-indigo-800 
+font-bold" [ngClass]="eleme
+nt.creditScore < 8000 ? 
+'text-red-600' : 
+''">Score: {{element.credit
+Score}}</div>
+                           
+                           
+     ~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+
+
+Error: src/app/features/sho
+pkeepers/shopkeeper.compone
+nt.ts:48:62 - error 
+NG8001: 'mat-icon' is not 
+a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+48                 <button 
+mat-icon-button 
+title="View Details"><mat-i
+con>visibility</mat-icon></
+button>
+                           
+                           
+          ~~~~~~~~~~
+
+
+Error: src/app/features/sho
+pkeepers/shopkeeper.compone
+nt.ts:49:107 - error 
+NG8001: 'mat-icon' is not 
+a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+49                 <button 
+mat-icon-button 
+color="warn" 
+title="Block/Unblock" (clic
+k)="toggleBlock(element)"><
+mat-icon>block</mat-icon></
+button>
+                           
+                           
+                           
+                           
+ ~~~~~~~~~~
+
+
+Error: src/app/features/sho
+pkeepers/shopkeeper.compone
+nt.ts:58:14 - error 
+NG8001: 'mat-icon' is not 
+a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+58              <mat-icon 
+class="animate-spin text-in
+digo-600">autorenew</mat-ic
+on>
+                ~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
+
+
+Error: src/app/layout/layou
+t.component.html:12:11 - 
+error NG8001: 'mat-icon' 
+is not a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+12           <mat-icon clas
+s="mr-3">dashboard</mat-ico
+n> Dashboard
+             
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/layout/layout.com
+ponent.ts:6:16
+    6   templateUrl: 
+'./layout.component.html',
+                     
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the 
+template of component 
+LayoutComponent.
+
+
+Error: src/app/layout/layou
+t.component.html:15:11 - 
+error NG8001: 'mat-icon' 
+is not a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+15           <mat-icon clas
+s="mr-3">inventory_2</mat-i
+con> Products
+             
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/layout/layout.com
+ponent.ts:6:16
+    6   templateUrl: 
+'./layout.component.html',
+                     
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the 
+template of component 
+LayoutComponent.
+
+
+Error: src/app/layout/layou
+t.component.html:18:11 - 
+error NG8001: 'mat-icon' 
+is not a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+18           <mat-icon clas
+s="mr-3">shopping_cart</mat
+-icon> Orders
+             
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/layout/layout.com
+ponent.ts:6:16
+    6   templateUrl: 
+'./layout.component.html',
+                     
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the 
+template of component 
+LayoutComponent.
+
+
+Error: src/app/layout/layou
+t.component.html:21:11 - 
+error NG8001: 'mat-icon' 
+is not a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+21           <mat-icon clas
+s="mr-3">storefront</mat-ic
+on> Shopkeepers
+             
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/layout/layout.com
+ponent.ts:6:16
+    6   templateUrl: 
+'./layout.component.html',
+                     
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the 
+template of component 
+LayoutComponent.
+
+
+Error: src/app/layout/layou
+t.component.html:24:11 - 
+error NG8001: 'mat-icon' 
+is not a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+24           <mat-icon clas
+s="mr-3">account_balance_wa
+llet</mat-icon> Credit 
+Module
+             
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/layout/layout.com
+ponent.ts:6:16
+    6   templateUrl: 
+'./layout.component.html',
+                     
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the 
+template of component 
+LayoutComponent.
+
+
+Error: src/app/layout/layou
+t.component.html:27:11 - 
+error NG8001: 'mat-icon' 
+is not a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+27           <mat-icon clas
+s="mr-3">local_shipping</ma
+t-icon> Delivery Boys
+             
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/layout/layout.com
+ponent.ts:6:16
+    6   templateUrl: 
+'./layout.component.html',
+                     
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the 
+template of component 
+LayoutComponent.
+
+
+Error: src/app/layout/layou
+t.component.html:34:9 - 
+error NG8001: 'mat-icon' 
+is not a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+34         <mat-icon class=
+"mr-3">logout</mat-icon> 
+Logout
+           
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/layout/layout.com
+ponent.ts:6:16
+    6   templateUrl: 
+'./layout.component.html',
+                     
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the 
+template of component 
+LayoutComponent.
+
+
+Error: src/app/layout/layou
+t.component.html:45:10 - 
+error NG8001: 'mat-icon' 
+is not a known element:
+1. If 'mat-icon' is an 
+Angular component, then 
+verify that it is part of 
+this module.
+2. If 'mat-icon' is a Web 
+Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+45          <mat-icon>notif
+ications</mat-icon>
+            ~~~~~~~~~~
+
+  src/app/layout/layout.com
+ponent.ts:6:16
+    6   templateUrl: 
+'./layout.component.html',
+                     
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the 
+template of component 
+LayoutComponent.
+
+
+Error: src/app/layout/layou
+t.component.html:51:7 - 
+error NG8001: 
+'router-outlet' is not a 
+known element:
+1. If 'router-outlet' is 
+an Angular component, then 
+verify that it is part of 
+this module.
+2. If 'router-outlet' is a 
+Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@NgModule.schemas' 
+of this component to 
+suppress this message.
+
+51       <router-outlet></r
+outer-outlet>
+         ~~~~~~~~~~~~~~~
+
+  src/app/layout/layout.com
+ponent.ts:6:16
+    6   templateUrl: 
+'./layout.component.html',
+                     
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the 
+template of component 
+LayoutComponent.
+
+
+
