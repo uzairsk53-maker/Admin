@@ -50,6 +50,16 @@ import { ToastService } from '../../shared/services/toast.service';
               </label>
             </div>
 
+            <div class="space-y-2">
+              <p class="text-sm font-semibold text-slate-700">Set Live Tracking Location (Map)</p>
+              <app-map-picker 
+                height="200px" 
+                [lat]="form.get('latitude')?.value" 
+                [lng]="form.get('longitude')?.value"
+                (locationChange)="onLocationChange($event)">
+              </app-map-picker>
+            </div>
+
             <div class="rounded-[22px] border border-slate-200 bg-slate-50/90 p-4 text-sm text-slate-500">
               This creates a real delivery user through the existing API. No dummy data is being used.
             </div>
@@ -82,7 +92,16 @@ export class DeliveryDialogComponent {
       name: ['', Validators.required],
       phone: ['', [Validators.required, Validators.pattern(/^\d{8,15}$/)]],
       email: [''],
-      city: ['']
+      city: [''],
+      latitude: [null],
+      longitude: [null]
+    });
+  }
+
+  onLocationChange(pos: {lat: number, lng: number}) {
+    this.form.patchValue({
+      latitude: pos.lat,
+      longitude: pos.lng
     });
   }
 

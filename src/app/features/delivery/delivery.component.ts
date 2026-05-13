@@ -58,6 +58,9 @@ import { ToastService } from '../../shared/services/toast.service';
               <span class="badge" [class.badge--green]="boy.isActive" [class.badge--gray]="!boy.isActive">
                 {{ boy.isActive ? 'Active' : 'Inactive' }}
               </span>
+              <button class="action-chip ml-auto !h-8 !w-8 p-0" title="Edit Partner" (click)="openEditBoyModal(boy)">
+                <app-icon name="edit" [size]="14"></app-icon>
+              </button>
             </div>
             <div class="partner-card__stats">
               <div>
@@ -121,6 +124,9 @@ import { ToastService } from '../../shared/services/toast.service';
                     </button>
                     <button type="button" class="action-chip !min-h-[38px] text-sky-700" (click)="openStatusUpdate(d)">
                       <app-icon name="edit" [size]="14"></app-icon> Status
+                    </button>
+                    <button type="button" class="action-chip !min-h-[38px] text-emerald-700" *ngIf="d.deliveryBoyId" (click)="openTrackModal(d)">
+                      <app-icon name="location" [size]="14"></app-icon> Track
                     </button>
                   </div>
                 </td>
@@ -242,6 +248,72 @@ import { ToastService } from '../../shared/services/toast.service';
         </div>
       </div>
 
+      <!-- Edit Boy Modal with Tracking Map -->
+      <div *ngIf="editBoyModal" class="custom-modal" (click)="editBoyModal=false">
+        <div class="custom-modal__panel custom-modal__panel--wide" (click)="$event.stopPropagation()">
+          <div class="p-6 sm:p-8">
+            <div class="flex items-start justify-between gap-4 mb-6">
+              <div>
+                <p class="page-hero__eyebrow">Delivery Partner</p>
+                <h2 class="mt-1 text-2xl font-extrabold text-slate-950">Edit Partner & Live Tracking</h2>
+              </div>
+              <button type="button" class="header-action !h-10 !w-10" (click)="editBoyModal=false"><app-icon name="close" [size]="16"></app-icon></button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Edit Form -->
+              <form [formGroup]="editBoyForm" (ngSubmit)="updateDeliveryBoy()" class="space-y-4">
+                <label class="custom-field" [class.custom-field--filled]="editBoyForm.get('name')?.value">
+                  <input class="custom-field__control" formControlName="name" placeholder=" ">
+                  <span class="custom-field__label">Full Name *</span>
+                </label>
+                <label class="custom-field" [class.custom-field--filled]="editBoyForm.get('phone')?.value">
+                  <input class="custom-field__control" formControlName="phone" placeholder=" ">
+                  <span class="custom-field__label">Phone Number *</span>
+                </label>
+                <label class="custom-field" [class.custom-field--filled]="editBoyForm.get('vehicleNo')?.value">
+                  <input class="custom-field__control" formControlName="vehicleNo" placeholder=" ">
+                  <span class="custom-field__label">Vehicle No.</span>
+                </label>
+                <label class="custom-field" [class.custom-field--filled]="editBoyForm.get('city')?.value">
+                  <input class="custom-field__control" formControlName="city" placeholder=" ">
+                  <span class="custom-field__label">City</span>
+                </label>
+                
+                <label class="flex cursor-pointer items-center justify-between rounded-[22px] border border-slate-200 bg-slate-50 px-4 py-4">
+                  <div>
+                    <p class="font-bold text-slate-900">Active Status</p>
+                    <p class="mt-1 text-sm text-slate-500">Toggle if partner is active.</p>
+                  </div>
+                  <input type="checkbox" formControlName="isActive" class="h-5 w-5 rounded border-slate-300 text-sky-600">
+                </label>
+
+                <div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-start pt-2">
+                  <button type="submit" class="ui-btn ui-btn-primary" [disabled]="editBoyForm.invalid || boyBusy">{{ boyBusy ? 'Saving...' : 'Save Changes' }}</button>
+                  <button type="button" class="ui-btn ui-btn-secondary" (click)="editBoyModal=false">Close</button>
+                </div>
+              </form>
+
+              <!-- Map Tracking -->
+              <div class="space-y-3">
+                <p class="font-bold text-slate-900">Live GPS Location</p>
+                <div class="rounded-2xl border-2 border-slate-200 overflow-hidden relative" style="height: 300px">
+                  <app-map-picker 
+                    height="300px" 
+                    [lat]="selectedBoy?.latitude" 
+                    [lng]="selectedBoy?.longitude"
+                    (locationChange)="onLocationChange($event)">
+                  </app-map-picker>
+                </div>
+                <p class="text-xs text-slate-500">
+                  <app-icon name="info" [size]="12" class="inline"></app-icon> Move pin to update partner's live tracking coordinates.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Assign Delivery Modal -->
       <div *ngIf="assignDeliveryModal.open" class="custom-modal" (click)="assignDeliveryModal.open=false">
         <div class="custom-modal__panel" (click)="$event.stopPropagation()">
@@ -359,6 +431,52 @@ import { ToastService } from '../../shared/services/toast.service';
         </div>
       </div>
 
+      <!-- Live Tracking Modal -->
+      <div *ngIf="trackModal.open" class="custom-modal" (click)="trackModal.open=false">
+        <div class="custom-modal__panel custom-modal__panel--wide" (click)="$event.stopPropagation()">
+          <div class="p-6 sm:p-8">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <div>
+                <p class="page-hero__eyebrow">Live GPS Tracking</p>
+                <h2 class="mt-1 text-2xl font-extrabold text-slate-950">Track Delivery</h2>
+                <p class="mt-1 text-sm text-slate-500">
+                  <span class="font-bold text-slate-700">{{ trackModal.delivery?.deliveryBoy?.name || 'Partner' }}</span>
+                  &mdash; delivering to {{ trackModal.delivery?.order?.shopkeeper?.shopName || 'Shop' }}
+                </p>
+              </div>
+              <button type="button" class="header-action !h-10 !w-10" (click)="trackModal.open=false">
+                <app-icon name="close" [size]="16"></app-icon>
+              </button>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 mb-4 flex justify-between items-center text-sm">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-indigo-600"></span> 
+                <span class="font-semibold text-slate-700">Delivery Vehicle</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="font-semibold text-slate-700">Destination</span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+              </div>
+            </div>
+
+            <div class="w-full">
+              <app-map-tracker
+                height="400px"
+                [startLat]="trackModal.delivery?.deliveryBoy?.latitude"
+                [startLng]="trackModal.delivery?.deliveryBoy?.longitude"
+                [endLat]="trackModal.delivery?.order?.shopkeeper?.latitude"
+                [endLng]="trackModal.delivery?.order?.shopkeeper?.longitude">
+              </app-map-tracker>
+            </div>
+
+            <div class="mt-6 flex justify-end">
+              <button type="button" class="ui-btn ui-btn-primary" (click)="trackModal.open=false">Close Tracking</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Repayment Confirm Modal -->
       <div *ngIf="repayConfirmOpen" class="custom-modal" (click)="repayConfirmOpen=false">
         <div class="custom-modal__panel" (click)="$event.stopPropagation()">
@@ -396,11 +514,15 @@ export class DeliveryComponent implements OnInit, OnDestroy {
   statusBusy = false;
   repayBusy = false;
   addBoyModal = false;
+  editBoyModal = false;
   repayConfirmOpen = false;
   assignDeliveryModal: any = { open: false, delivery: null, deliveryBoyId: '', notes: '' };
   statusModal: any = { open: false, delivery: null, status: '', notes: '' };
+  trackModal: any = { open: false, delivery: null };
   boyForm!: FormGroup;
+  editBoyForm!: FormGroup;
   repayForm!: FormGroup;
+  selectedBoy: any = null;
   private destroy$ = new Subject<void>();
 
   constructor(private adminApi: AdminApiService, private toast: ToastService, private fb: FormBuilder) {}
@@ -410,6 +532,15 @@ export class DeliveryComponent implements OnInit, OnDestroy {
       name: ['', Validators.required],
       phone: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
+    });
+    this.editBoyForm = this.fb.group({
+      name: ['', Validators.required],
+      phone: ['', Validators.required],
+      vehicleNo: [''],
+      city: [''],
+      isActive: [true],
+      latitude: [null],
+      longitude: [null]
     });
     this.repayForm = this.fb.group({
       shopkeeperId: ['', Validators.required],
@@ -470,6 +601,33 @@ export class DeliveryComponent implements OnInit, OnDestroy {
     });
   }
 
+  openEditBoyModal(boy: any) {
+    this.selectedBoy = boy;
+    this.editBoyForm.patchValue({
+      name: boy.name || '',
+      phone: boy.phone || '',
+      vehicleNo: boy.vehicleNo || '',
+      city: boy.city || '',
+      isActive: boy.isActive !== false,
+      latitude: boy.latitude,
+      longitude: boy.longitude
+    });
+    this.editBoyModal = true;
+  }
+
+  onLocationChange(pos: {lat: number, lng: number}) {
+    this.editBoyForm.patchValue({ latitude: pos.lat, longitude: pos.lng });
+  }
+
+  updateDeliveryBoy() {
+    if (this.editBoyForm.invalid || !this.selectedBoy) { this.editBoyForm.markAllAsTouched(); return; }
+    this.boyBusy = true;
+    this.adminApi.updateDeliveryBoy(this.selectedBoy.id, this.editBoyForm.value).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => { this.toast.success('Partner updated!'); this.boyBusy = false; this.editBoyModal = false; this.loadBoys(); },
+      error: (e: any) => { this.toast.error(e?.error?.message || 'Failed'); this.boyBusy = false; },
+    });
+  }
+
   openAssignDelivery(d: any) {
     this.assignDeliveryModal = { open: true, delivery: d, deliveryBoyId: '', notes: '' };
   }
@@ -486,6 +644,10 @@ export class DeliveryComponent implements OnInit, OnDestroy {
 
   openStatusUpdate(d: any) {
     this.statusModal = { open: true, delivery: d, newStatus: '', notes: '' };
+  }
+
+  openTrackModal(d: any) {
+    this.trackModal = { open: true, delivery: d };
   }
 
   doUpdateStatus() {
