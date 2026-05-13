@@ -27,6 +27,8 @@ import { LoaderComponent } from './shared/components/loader/loader.component';
 import { ProductDialogComponent } from './features/products/product-dialog/product-dialog.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
 import { IconComponent } from './shared/ui/icon.component';
+import { MapPickerComponent } from './shared/components/map-picker/map-picker.component';
+import { MapTrackerComponent } from './shared/components/map-tracker/map-tracker.component';
 
 // Interceptors
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
@@ -48,6 +50,8 @@ import { LoaderInterceptor } from './core/interceptors/loader.interceptor';
     ProductDialogComponent,
     ToastComponent,
     IconComponent,
+    MapPickerComponent,
+    MapTrackerComponent,
   ],
   imports: [
     BrowserModule,
